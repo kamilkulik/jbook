@@ -9,7 +9,7 @@ var path_1 = __importDefault(require("path"));
 var serve = function (port, filename, dir) {
     var app = express_1.default();
     var packagePath = require.resolve('local-client/build/index.html');
-    app.use(path_1.default.dirname(packagePath));
+    app.use(express_1.default.static(path_1.default.dirname(packagePath)));
     // app.use(
     //   createProxyMiddleware({
     //     target: 'http://localhost:3000',
