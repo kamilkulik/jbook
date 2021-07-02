@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 // import CodeCell from './components/code-cell';
 import { Provider } from 'react-redux';
 import configureStore from './state/store';
-import TextEditor from './components/text-editor';
 import CellList from './components/cell-list';
 import { persistState } from './state/localStorage';
 
