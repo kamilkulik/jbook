@@ -8,10 +8,14 @@ import { useActions } from '../hooks/use-actions';
 const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cells: { order, data } }) => order.map((id) => data[id]));
 
-  const { fetchCells } = useActions();
+  const { fetchCells, saveCells } = useActions();
 
   useEffect(() => {
     fetchCells();
+  }, []);
+
+  useEffect(() => {
+    saveCells();
   }, []);
 
   const renderedCells = cells.map((cell) => (

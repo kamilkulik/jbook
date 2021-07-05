@@ -5,15 +5,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './state/store';
 import CellList from './components/cell-list';
-import { persistState } from './state/localStorage';
+// import { persistState } from './state/localStorage';
 
 const store = configureStore();
-store.subscribe(() => {
-  persistState({
-    cells: store.getState().cells,
-    bundles: store.getState().bundles,
-  });
-});
+// store.subscribe(() => {
+//   persistState({
+//     cells: store.getState().cells,
+//     bundles: store.getState().bundles,
+//   });
+// });
 
 const App = () => {
   return (
