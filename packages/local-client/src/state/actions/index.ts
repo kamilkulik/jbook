@@ -3,6 +3,24 @@ import { Cell, CellTypes } from '../cell';
 
 export type Direction = 'down' | 'up';
 
+export interface BundleStartAction {
+  type: ActionType.BUNDLE_START;
+  payload: {
+    cellId: string;
+  };
+}
+
+export interface BundleCompleteAction {
+  type: ActionType.BUNDLE_COMPLETE;
+  payload: {
+    cellId: string;
+    bundle: {
+      code: string;
+      err: string;
+    };
+  };
+}
+
 export interface DeleteCellAction {
   type: ActionType.DELETE_CELL;
   payload: string;
@@ -38,6 +56,11 @@ export interface MoveCellAction {
   };
 }
 
+export interface SaveCellsErrorAction {
+  type: ActionType.SAVE_CELLS_ERROR;
+  payload: string;
+}
+
 export interface UpdateCellAction {
   type: ActionType.UPDATE_CELL;
   payload: {
@@ -46,31 +69,14 @@ export interface UpdateCellAction {
   };
 }
 
-export interface BundleStartAction {
-  type: ActionType.BUNDLE_START;
-  payload: {
-    cellId: string;
-  };
-}
-
-export interface BundleCompleteAction {
-  type: ActionType.BUNDLE_COMPLETE;
-  payload: {
-    cellId: string;
-    bundle: {
-      code: string;
-      err: string;
-    };
-  };
-}
-
 export type Action =
+  | BundleStartAction
+  | BundleCompleteAction
   | DeleteCellAction
   | FetchCellsAction
   | FetchCellsCompleteAction
   | FetchCellsErrorAction
   | InsertCellAfterAction
   | MoveCellAction
-  | UpdateCellAction
-  | BundleStartAction
-  | BundleCompleteAction;
+  | SaveCellsErrorAction
+  | UpdateCellAction;
