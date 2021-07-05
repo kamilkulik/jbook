@@ -107,6 +107,9 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
       state.order[index] = state.order[targetIndex];
       state.order[targetIndex] = cellId;
       return state;
+    case ActionType.SAVE_CELLS_ERROR:
+      state.error = action.payload;
+      return state;
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
 
