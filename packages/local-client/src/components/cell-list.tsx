@@ -14,6 +14,7 @@ const CellList: React.FC = () => {
     fetchCells();
   }, []);
 
+  // TODO debug post request with empty cells list
   useEffect(() => {
     saveCells();
   }, []);
