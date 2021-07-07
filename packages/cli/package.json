@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsnote-asdf": "^1.0.0"
+    "@jsnote-asdf/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^15.12.4",
